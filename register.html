@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Sign Up - Sign In</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+
+        .dark-mode{
+            background-color: black;
+            color: #a0a5a8;
+        }
+
+        .dark-mode .a-container{
+            display: block;
+        }       
+
+        .dark-mode .b-container{
+            display: none;
+        }
+
+        .dark-mode .main {
+            background-color: #1d1d1d;
+            box-shadow: 5px 5px 5px #111111, -5px -5px 5px #111111;
+        }
+        
+        .dark-mode .container{
+            background-color: #1f2020;
+        }
+
+        .dark-mode .title{
+            color: white;
+        }
+
+        .dark-mode .form__input{
+            background-color: #9c9c9c;
+            font-weight: bolder;
+            box-shadow: inset 2px 2px 4px #444546, inset -2px -2px 4px #535353;
+        }
+
+        .dark-mode .form__input:focus{
+            box-shadow: inset 2px 2px 4px #444546, inset -2px -2px 4px #535353;
+        }
+        
+        .dark-mode .form__input::placeholder{
+            color: rgb(71, 71, 71);
+        }
+
+        .dark-mode .form__link{
+            color: rgb(185, 185, 185);
+        }
+
+        .light-mode .form__icons a{
+            color:rgb(80, 87, 84);
+        }
+        
+        .light-mode .form__icons a:hover{
+            color: #fff;
+            background-color: #1e4dcd;
+        }
+
+        .dark-mode .button-1,
+        .dark-mode .button{
+            box-shadow: 10px 10px 10px #1f2020, -10px -10px 10px #1f2020;
+        }
+
+        .dark-mode .switch__button{
+            box-shadow: none;
+        }
+        
+        .dark-mode .switch{
+            background-color: #0f0f0f;
+            transition: none;
+            box-shadow: 4px 4px 10px #121313, -4px -4px 10px #121313;
+        }
+
+        .dark-mode .switch__circle {
+            background-color: #1f2020;
+            box-shadow: inset 8px 8px 12px #121313, inset -8px -8px 12px #121313;
+        }
+
+
+    </style>
+</head>
+
+<body id="register-body">
+    <button class="toggle-mode-button">Switch Mode</button>
+    <div class="main">
+        <div class="container a-container" id="a-container">
+            <form class="form" id="a-form" method="post" action="signup.php">
+                <h2 class="form_title title">Create Account</h2>
+                <div class="form__icons">
+                    <a href="#"><i class="ri-github-line"></i></a>
+                    <a href="#"><i class="ri-telegram-line"></i></a>
+                    <a href="#"><i class="ri-linkedin-line"></i></a>
+                </div>
+                <span class="form__span">or use email for registration</span>
+                <input class="form__input" type="text" placeholder="Name" name="username">
+                <input class="form__input" type="text" placeholder="Email" name="email">
+                <input class="form__input" type="password" placeholder="Password" name="password">
+                <button class="form__button button switch-btn" type='submit' name="signup">SIGN UP</button>
+            </form>
+        </div>
+        <div class="container b-container" id="b-container">
+            <form class="form" id="b-form" method="post" action="index.html">
+                <h2 class="form_title title">Sign in to Website</h2>
+                <div class="form__icons">
+                    <a href="#"><i class="ri-github-line"></i></a>
+                    <a href="#"><i class="ri-telegram-line"></i></a>
+                    <a href="#"><i class="ri-linkedin-line"></i></a>
+                </div>
+                <span class="form__span">or use your email account</span>
+                <input class="form__input" type="text" placeholder="Email" name = "email">
+                <input class="form__input" type="password" placeholder="Password" name = "password"><a class="form__link">Forgot your password?</a>
+                <button class="form__button button-1 switch-btn" name = "signin">SIGN IN</button>
+            </form>
+        </div>
+        <div class="switch" id="switch-cnt">
+            <div class="switch__circle"></div>
+            <div class="switch__circle switch__circle--t"></div>
+            <div class="switch__container" id="switch-c1">
+              <h2 class="switch__title title">Welcome Back !</h2>
+              <p class="switch__description description">To keep connected with us please login with your personal info</p>
+              <button class="switch__button button switch-btn">GO TO SIGN IN</button>
+            </div>
+            <div class="switch__container is-hidden" id="switch-c2">
+              <h2 class="switch__title title">Hello Friend !</h2>
+              <p class="switch__description description">Enter your personal details and start journey with us</p>
+              <button class="switch__button button-1 switch-btn">GO TO SIGN UP</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+    <script src="mode-switch.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coding Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Coding Projects</h1>
+
+    <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
+        <label for="projectFile">Choose a project file:</label>
+        <input type="file" id="projectFile" name="projectFile" accept=".zip, .tar.gz">
+        <button type="submit">Upload Project</button>
+    </form>
+
+    <table id="projectTable">
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>File Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Project rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Handle the file upload logic here (you'll need server-side code for this)
+
+            // For demonstration purposes, let's just display a message
+            alert('Project uploaded successfully!');
+
+            // After successful upload, update the table with project names and sizes
+            updateTable();
+        });
+
+        function updateTable() {
+            // For demonstration purposes, let's add sample project names
+            const projects = [
+                { name: 'Project A', size: '2 MB' },
+                { name: 'Project B', size: '1.5 MB' },
+                { name: 'Project C', size: '3 MB' }
+            ];
+
+            const tableBody = document.querySelector('#projectTable tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            projects.forEach(project => {
+                const row = tableBody.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+
+                cell1.textContent = project.name;
+                cell2.textContent = project.size;
+            });
+        }
+    </script>
+
+</body>
+</html>
